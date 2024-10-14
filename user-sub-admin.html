@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resource Management System</title>
+  <link rel="stylesheet" type="text/css" href="subadmin_styles.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href="https://fonts.google.com/share?selection.family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900"> 
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo-content">
+      <div class="logo">
+        <img src="responsive.png" alt="">
+        <div class="logo-name">BorrowResource</div>
+      </div>
+      <i class='bx bx-menu' id="btn"></i>
+    </div>
+    <ul class="navlist">
+      <li>
+        <a href="dashboard-sub-admin.html">
+          <i class='bx bx-grid-alt'></i>
+          <span class="link_name">Dashboard</span>
+        </a>
+        <span class="tooltip">Dashboard</span>
+      </li>
+      <li>
+        <a href="user-sub-admin.html">
+          <i class='bx bx-user'></i>
+          <span class="link_name">User</span>
+        </a>
+        <span class="tooltip">User</span>
+      </li>
+      <li>
+        <a href="resources-sub-admin.html">
+          <i class='bx bx-book' style='color:#ffffff' ></i>
+          <span class="link_name">Resources</span>
+        </a>
+        <span class="tooltip">Resources</span>
+      </li>
+      <li>
+        <a href="notification-sub-admin.html">
+          <i class='bx bx-bell' ></i>
+          <span class="link_name">Notification</span>
+        </a>
+        <span class="tooltip">Notification</span>
+      </li>
+      <li>
+        <a href="setting-sub-admin.html">
+          <i class='bx bx-cog' ></i>
+          <span class="link_name">Setting</span>
+        </a>
+        <span class="tooltip">Setting</span>
+      </li>
+    </ul>
+    <div class="profile-content">
+      <div class="profile">
+        <div class="profile-details">
+          <img src="subadmin_pic.jpeg" alt="">
+          <div class="name-job">
+            <div class="name">Trixie Santos</div>
+            <div class="job">Assistant Administrator</div>
+         </div>
+       </div>
+      <i class='bx bx-log-out' id="log-out" ></i>
+      </div>
+   </div>
+  </div>
+  <style>.home-content {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.user-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 900px;
+    margin-top: 30px;
+}
+
+.box-user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #03511c;
+    color: white;
+    height: 50px;
+    width: 200px;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+.dropdown-toggle::after {
+    content: "\25BC";
+    display: inline-block;
+    margin-left: 5px;
+    transform: rotate(90deg);
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #e8efeb;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    height: 100px;
+    width: 100px;
+    border: 5px solid black;
+}
+
+.dropdown-item {
+    text-align: center;
+    margin-top: 10px;
+    color: rgb(12, 8, 8);
+}
+
+.dropdown-menu.active {
+    display: block;
+}
+
+.dropdown-item a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.dropdown-item a:hover {
+    text-decoration: underline;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    text-align: center;
+    color: white;
+    background-color: #03511c;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.delete-button {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: darkred;
+}
+.notifications2 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(211, 243, 219, 0.7);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid black;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 9999;
+    display: none;
+    animation: fadeInOut 0.5s ease-in-out;
+}
+
+.notifications2-box {
+    text-align: center;
+}
+
+.notifications2 h3 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.notifications2 p {
+    font-size: 18px;
+}
+
+.notifications2-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.notifications2-close:hover {
+    color: #ff5252; /* Red color on hover */
+}
+</style>
+  <section class="home-content"></div>
+    <div class="user-list">
+      <div class="box-user" id="box-user"> 
+        <h1>USER LIST</h1>
+        <div class="dropdown">
+          <div class="dropdown-toggle" onclick="toggleDropdown()"></div>
+          <div class="dropdown-menu" id="user-type-dropdown">
+            <div class="dropdown-item"><a href="faculty-list.html">Faculty</a></div>
+            <div class="dropdown-item"><a href="user-admin.html">Students</a></div>
+          </div>
+        </div>
+      </div>
+    
+        <table>
+        <thead>
+          <tr>
+            <th>Student Name</th>
+            <th>Role</th>
+            <th>Course</th>
+            <th>Year & section</th>
+            <th>School Year</th> 
+            <th>Action</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Marie Colleen Tingas</td>
+            <td>Student</td>
+            <td>BS Computer Science</td>
+            <td>2nd yr - C</td>
+            <td>2023-2024</td>
+            <td><button id="deleteBtn1" class="delete-button" onclick="deleteAccount('Marie Colleen Tingas')">Delete</button></td>
+              </tr>
+          <tr>
+            <td>Trixie Galvez</td>
+            <td>Faculty</td>
+            <td>BS Information Technology</td>
+            <td>3rd yr - A</td>
+            <td>2023-2024</td>
+            <td><button id="deleteBtn1" class="delete-button" onclick="deleteAccount('Trixie Galvez')">Delete</button></td>
+           
+          </tr>
+          <tr>
+            <td>Dannah Sabio</td>
+            <td>Faculty</td>
+            <td>BS Information Technology</td>
+            <td>2nd yr - B</td>
+            <td>2023-2024</td>
+            <td><button id="deleteBtn1" class="delete-button" onclick="deleteAccount('Dannah Sabio')">Delete</button></td>
+          </tr>
+          
+          <tr>
+            <td>Farhan Hussin</td>
+            <td>Student</td>
+            <td>BS Information Technology</td>
+            <td>3rd yr - A</td>
+            <td>2023-2024</td>
+            <td><button id="deleteBtn1" class="delete-button" onclick="deleteAccount('Farhan Hussin')">Delete</button></td>
+              </tr>
+          <tr>
+            <td>Bombom Mudrigal</td>
+            <td>Student</td>
+            <td>BS Information Technology</td>
+            <td>1st yr - B</td>
+            <td>2023-2024</td>
+            <td><button id="deleteBtn1" class="delete-button" onclick="deleteAccount('Bombom Mudrigal')">Delete</button></td>
+             <tr>
+            <td>Marie Jane Batumbakal</td>
+            <td>Student</td>
+            <td>BS Information Technology</td>
+            <td>3rd yr - B</td>
+            <td>2023-2024</td>
+            <td><button id="deleteBtn1" class="delete-button" onclick="deleteAccount('Marie Jane Batumbakal')">Delete</button></td>
+          </tr>
+         
+          <tr>
+            <td>Ervin Candido</td>
+            <td>Student</td>
+            <td>BS Information Technology</td>
+            <td>2nd yr - B</td>
+            <td>2023-2024</td>
+            <td><button id="deleteBtn1" class="delete-button" onclick="deleteAccount('Ervin Candido')">Delete</button></td>
+          </tr>
+          <tr>
+            <td>Justin Ando</td>
+            <td>Student</td>
+            <td>BS Information Technology</td>
+            <td>3rd yr - A</td>
+            <td>2023-2024</td>
+            <td><button id="deleteBtn1" class="delete-button" onclick="deleteAccount('Justin Ando')">Delete</button></td>
+          </tr>
+          <tr>
+            <td>Angel Bernado</td>
+            <td>Student</td>
+            <td>BS Computer Science</td>
+            <td>4th yr - B</td>
+            <td>2023-2024</td>
+            <td><button id="deleteBtn1" class="delete-button" onclick="deleteAccount('Angel Bernado')">Delete</button></td>
+              </tr>
+      
+       
+           
+        
+        </tbody>
+        </table>
+        <div id="notifications2" class="notifications2">
+          <div class="notifications2-box">
+            <h3>Account Deleted Succesfully</h3>
+            <p id="deleted-info"></p>
+          </div>
+        </div>
+      
+        </section>
+      
+        </div>
+    </div>
+    </section>
+<script src="subadmin.js"></script>
+</body>
+
+</html>

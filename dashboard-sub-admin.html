@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Borrow Resource Management System</title>
+  <link rel="stylesheet" type="text/css" href="subadmin_styles.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href="https://fonts.google.com/share?selection.family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900"> 
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo-content">
+      <div class="logo">
+        <img src="responsive.png" alt="">
+        <div class="logo-name">BorrowResource</div>
+      </div>
+      <i class='bx bx-menu' id="btn"></i>
+    </div>
+    <ul class="navlist">
+      <li>
+        <a href="dashboard-sub-admin.html">
+          <i class='bx bx-grid-alt'></i>
+          <span class="link_name">Dashboard</span>
+        </a>
+        <span class="tooltip">Dashboard</span>
+      </li>
+      <li>
+        <a href="user-sub-admin.html">
+          <i class='bx bx-user'></i>
+          <span class="link_name">User</span>
+        </a>
+        <span class="tooltip">User</span>
+      </li>
+      <li>
+        <a href="resources-sub-admin.html">
+          <i class='bx bx-book' style='color:#ffffff' ></i>
+          <span class="link_name">Resources</span>
+        </a>
+        <span class="tooltip">Resources</span>
+      </li>
+      <li>
+        <a href="notification-sub-admin.html">
+          <i class='bx bx-bell' ></i>
+          <span class="link_name">Notifications</span>
+        </a>
+        <span class="tooltip">Notifications</span>
+      </li>
+      <li>
+        <a href="setting-sub-admin.html">
+          <i class='bx bx-cog' ></i>
+          <span class="link_name">Setting</span>
+        </a>
+        <span class="tooltip">Setting</span>
+      </li>
+    </ul>
+    <div class="profile-content">
+      <div class="profile">
+        <div class="profile-details">
+          <img src="subadmin_pic.jpeg" alt="">
+          <div class="name-job">
+            <div class="name">Trixie Santos</div>
+            <div class="job">Assistant Administrator</div>
+         </div>
+       </div>
+      <i class='bx bx-log-out' id="log-out" ></i>
+      </div>
+   </div>
+  </div>
+  <section class="home-content">
+    <div class="boxx1">
+        <h4>Welcome, Trixie Santos!</h4>
+        <p>Here are your important tasks and reports</p>  
+        <p>Please check your progress and updates.</p>
+    </div>
+      <div class="main">
+        <input class="srch" type="search" name="" placeholder="Search...">
+        <button class="btn">Search</button>
+    </div>
+<div class="box3-container">
+  <div class="box-container">
+    <div class="box">
+      <i class='bx bx-user icon'></i>
+      <div>
+        <div class="text" onclick="redirectToPage('user-sub-admin.html')">Number of Students </div>
+        <p class="numbers">368 Students</p>
+      </div>
+    </div>
+    <div class="box">
+      <i class='bx bx-book-alt icon'></i>
+      <div>
+        <div class="text" onclick="redirectToPage('report-sub-admin.html')">Resources Availability</div>
+        <p class="numbers">23 Resources</p>
+      </div>
+    </div>
+    <div class="box">
+      <i class='bx bx-check icon'></i>
+      <div>
+        <h4 class="text" onclick="redirectToPage('report-sub-admin.html')">Total Borrowed</h4>
+        <p class="numbers">60 Borrowed</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pfp-crd">
+<div class="profile-card">
+  <img src="subadmin_pic.jpeg" alt="Profile Picture" class="profile-pic">
+  <h2>Trixie Santos</h2>
+  <p>Assistant Administrator</p>
+  <div class="status-indicator"></div>
+  <p>Status</p>
+</div>
+</div>
+    
+<div class="chart-container" onclick="redirectToPage('report-sub-admin.html')">
+  <h3>Borrowed Chart</H3>
+  
+  <svg class="chart"></svg>
+  <div class="legend">
+      <div class="legend-item">
+          <div class="legend-color" style="background-color: blue;"></div>
+          <span>Room</span>
+      </div>
+      <div class="legend-item">
+          <div class="legend-color" style="background-color: green;"></div>
+          <span>Laboratory</span>
+      </div>
+      <div class="legend-item">
+          <div class="legend-color" style="background-color: red;"></div>
+          <span>Equipments</span>
+      </div>
+      <div class="legend-item">
+          <div class="legend-color" style="background-color: orange;"></div>
+          <span>Auditorium</span>
+      </div>
+  </div>
+</div>
+</div>
+<style> 
+  .sidebar.active + .home-content .container {
+    width: 71%px; 
+  }   
+  .container {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 440px;
+    margin-left: 38px;
+    margin-top: 275px;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    transition: all 0.3s ease; 
+  }
+  .container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-list {
+    margin-top: 10px;
+  }
+  
+  table {
+    width: 100%; 
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 4px;
+    text-align: left;
+    font-size: small; 
+  }
+  
+  th:nth-child(1),
+  td:nth-child(1) {
+    width: 30%; 
+  }
+
+  th:nth-child(2),
+  td:nth-child(2),
+  th:nth-child(3),
+  td:nth-child(3),
+  th:nth-child(4),
+  td:nth-child(4),
+  th:nth-child(5),
+  td:nth-child(5) {
+    width: auto; 
+  }
+  
+  .hrs {
+    text-align: center; 
+  }
+  
+  .reserved {
+    color: green; 
+  }
+  
+  .cancel {
+    color: red;
+  }
+  
+  .returned {
+    color: orange; 
+  }
+    .texth3 {
+    position: absolute;
+    left: 38px;
+    top: 243px; 
+    margin-bottom: 5px; 
+  }
+</style>
+<div class="texth3">
+<h3>Recent Borrow</h3>
+</div>
+
+  <div class="container" >
+    <table>
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Role</th>
+          <th class="hrs">Time</th>
+          <th>Resources</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Colleen Tingas</td>
+          <td>Student</td>
+          <td class="hrs">7:00AM - 9:00AM</td>
+          <td>Projector 1</td>
+          <td class="reserved">Reserved</td>
+        </tr>
+        <tr>
+          <td>Tricia Galvez</td>
+          <td>Teacher</td>
+          <td class="hrs">8:00AM - 9:30AM</td>
+          <td>TV</td>
+          <td class="reserved">Reserved</td>
+        </tr>
+        <tr>
+          <td>Danna Tabio</td>
+          <td>Student</td>
+          <td class="hrs">9:00AM - 11:00AM</td>
+          <td>HDMI</td>
+          <td class="cancel">Cancel</td>
+        </tr>
+        <tr>
+          <td>Farhan Hussin</td>
+          <td>Student</td>
+          <td class="hrs">10:00AM - 11:30AM</td>
+          <td>Lec 1</td>
+          <td class="returned">Returned</td>
+        </tr>
+        <tr>
+          <td>Bombom Mudrigal</td>
+          <td>Student</td>
+          <td class="hrs">11:00AM - 1:00PM</td>
+          <td>Lab 1</td>
+          <td class="reserved">Reserved</td>
+        </tr>
+        <tr>
+          <td>Jane Batumbakal</td>
+          <td>Teacher</td>
+          <td class="hrs">12:00PM - 1:30PM</td>
+          <td>Projector 2</td>
+          <td class="returned">Returned</td>
+        </tr>
+        <tr>
+          <td>Ethan Alviar</td>
+          <td>Teacher</td>
+          <td class="hrs">1:00PM - 2:30PM</td>
+          <td>Projector 1</td>
+          <td class="reserved">Reserved</td>
+        </tr>
+        <tr>
+          <td>Calista Perez</td>
+          <td>Student</td>
+          <td class="hrs">4:00PM - 5:30PM</td>
+          <td>Lec 2</td>
+          <td class="reserved">Reserved</td>
+        </tr>
+        <tr>
+          <td>Camille Ferrer</td>
+          <td>Student</td>
+          <td class="hrs">5:00PM - 7:00PM</td>
+          <td>Lab 1</td>
+          <td class="reserved">Reserved</td>
+        </tr>
+        <tr>
+          <td>Feliz Perez</td>
+          <td>Student</td>
+          <td class="hrs">7:00AM - 9:00AM</td>
+          <td>Projector 1</td>
+          <td class="reserved">Reserved</td>
+        </tr>
+        <tr>
+          <td>Mae Galvez</td>
+          <td>Teacher</td>
+          <td class="hrs">8:00AM - 9:30AM</td>
+          <td>TV</td>
+          <td class="reserved">Reserved</td>
+        </tr>
+        <tr>
+          <td>Princess Tabio</td>
+          <td>Student</td>
+          <td class="hrs">9:00AM - 11:00AM</td>
+          <td>HDMI</td>
+          <td class="cancel">Cancel</td>
+        </tr>
+        <tr>
+          <td>Elouisa Hussin</td>
+          <td>Student</td>
+          <td class="hrs">10:00AM - 11:30AM</td>
+          <td>Lec 1</td>
+          <td class="returned">Returned</td>
+        </tr>
+        <tr>
+          <td>Princess Mudrigal</td>
+          <td>Student</td>
+          <td class="hrs">11:00AM - 1:00PM</td>
+          <td>Lab 1</td>
+          <td class="reserved">Reserved</td>
+        </tr>
+        <tr>
+          <td>Luke Batumbakal</td>
+          <td>Teacher</td>
+          <td class="hrs">12:00PM - 1:30PM</td>
+          <td>Projector 2</td>
+          <td class="returned">Returned</td>
+        </tr>
+        <tr>
+          <td>Ethan Alpez</td>
+          <td>Teacher</td>
+          <td class="hrs">1:00PM - 2:30PM</td>
+          <td>Projector 1</td>
+          <td class="reserved">Reserved</td>
+        </tr>
+        <tr>
+      </tbody>
+    </table>
+  </div>
+  
+<div class="texthh3" onclick="redirectToPage('notification-sub-admin.html')">
+<h3>Notifications</h3>
+</div>
+  <div class="notifications1-container" onclick="redirectToPage('notification-sub-admin.html')">
+    <div class="notifications" onclick="showPopup('Joy', 'returned HDMI', '10:00am-11:30am', 'reschedule')">
+        <p><span class="bold">Joy Marcelino</span> returned HDMI</p>
+    </div>
+    <div class="notification" onclick="showPopup('Bombom', 'borrowed projector 2', '11:00am-1:00pm', 'confirm')">
+        <p><span class="bold">Bombom Mudrikal</span> borrowed projector 2</p>
+    </div>
+      <div class="notification" onclick="showPopup('Wayne', 'returned TV', '12:00pm-2:00pm', 'reschedule')">
+          <p><span class="bold">Wayne Ferrer</span> returned  TV</p>
+      </div>
+  
+      <div class="notification" onclick="showPopup('Anna', 'canceled lec 2', '3:00pm-5:00pm', 'reschedule')">
+          <p><span class="bold">Anna Marquez</span> canceled Lec 2</p>
+      </div>
+  
+      <div class="notification" onclick="showPopup('Rinaflor', 'borrowed Lab 1', '2:00pm-4:00pm', 'confirm')">
+          <p><span class="bold">Rinaflor Alcano</span> borrowed lab 1</p>
+      </div>
+      <div class="notification" onclick="showPopup('Princess', 'borrowed projector 2', '11:30am-1:30pm', 'confirm')">
+        <p><span class="bold">Princess Ducoy</span> borrowed projector 2</p>
+    </div>
+
+    <div class="notification" onclick="showPopup('Wayne', 'returned HDMI', '12:30pm-2:00pm', 'reschedule')">
+        <p><span class="bold">Herwayne Cawili</span> returned  HDMI</p>
+    </div>
+    
+</div>
+
+</section>
+
+<script src="https://d3js.org/d3.v6.min.js"></script>
+<script src="subadmin.js"></script>
+</body>
+
+</html>
