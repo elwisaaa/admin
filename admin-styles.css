@@ -19,7 +19,7 @@ body {
     left: 0;
     width: 78px;
     height: 100%;
-    background: linear-gradient(to top, #074309, #065d0a, #043d14);
+    background: linear-gradient(to top, #bd3246, #740021, #740021);
     padding: 6px 14px;
     transition: all 0.5s ease;
 }
@@ -218,7 +218,7 @@ body {
     border-radius: 12px;
     text-align: center;
     transition: all 0.4s ease;
-    background: linear-gradient(to top, #074309, #065d0a, #043d14);
+    background: linear-gradient(to top, #bd3246, #740021, #740021);
 }
 
 .sidebar.active .profile #log-out {
@@ -239,7 +239,7 @@ body {
 
   .box-user{
 display: flex;
-background-color: #03511c;
+background-color: #740021;
 color: white;
 height: 50px;
 width: 200px;
@@ -337,7 +337,7 @@ h1{
   th {
     text-align: center;
     color: white;
-    background-color: #03511c;
+    background-color: #740021;
   }
   
   tr:nth-child(even) {
@@ -440,7 +440,7 @@ h1{
 
 .flex-container th {
     color: white;
-    background-color: #176429;
+    background-color: #bd3246;
 }
 
 /* Style for table header */
@@ -545,7 +545,7 @@ h1 {
 .btn {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #045745;
+  background-color: #740021;
   color: #fff;
   text-decoration: none;
   border: none;
@@ -755,34 +755,34 @@ stroke:rgb(217, 58, 178);
 .homed-content .box h2 {
   margin: 0; /* Remove default margin */
   font-size: 20px; /* Maintain font size */
-  color: #333; /* Text color */
+  color: white; /* Text color */
 }
 
 /* Style for paragraph inside the box */
 .homed-content .box p {
   margin: 0;
   font-size: 16px; /* Adjusted font size */
-  color: #666; /* Text color */
+  color: white; /* Text color */
 }
 .box{margin-top: 20px;;}
 
 /* Additional styling for specific boxes */
 #b1 {
   margin-left: 80px;
-  background-color: #98c7a8;
+  background-color: #c85d6d;
 }
 
 #b2 {
-  background-color: #98c7a8;
+  background-color: #c85d6d;
 }
 
 #b3 {
-  background-color: #98c7a8;
+  background-color: #c85d6d;
 }
 
 
 .boxx1 {
-  background: linear-gradient(to right, #074309, #065d0a, #043d14);
+  background: linear-gradient(to right, #bd3246, #740021, #740021);
   width: 1100px; 
   height: 80px;
   padding: 8px 20px; 
@@ -803,7 +803,7 @@ stroke:rgb(217, 58, 178);
   }
 
   .boxx11 {
-    background: linear-gradient(to right, #074309, #065d0a, #043d14);
+    background: linear-gradient(to right,  #bd3246, #740021, #740021);
     width: 1100px; 
     height: 80px;
     padding: 8px 20px; 
@@ -832,7 +832,7 @@ stroke:rgb(217, 58, 178);
       transform: translate(-50%, -50%);
       background-color: #ffffff;
       padding: 20px;
-      border: 2px solid #721616;
+      border: 2px solid #bd3246;
       border-radius: 5px;
       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
       z-index: 999;
@@ -853,7 +853,7 @@ stroke:rgb(217, 58, 178);
     
     .delete-button {
       margin-left: 60px;
-      background-color: #104e20;
+      background-color: #bd3246;
       color: #ffffff;
       border: none;
       padding: 5px 10px;
@@ -903,7 +903,7 @@ stroke:rgb(217, 58, 178);
     .btn {
       padding: 10px 20px;
       font-size: 16px;
-      background-color: #0e5737;
+      background-color: #740021;
       color: white;
       border: none;
       border-radius: 5px;

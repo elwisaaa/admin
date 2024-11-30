@@ -19,7 +19,7 @@ body {
     left: 0;
     width: 78px;
     height: 100%;
-    background: linear-gradient(to top, #074309, #065d0a, #043d14);
+    background: linear-gradient(to top, #bd3246, #740021, #740021);
     padding: 6px 14px;
     transition: all 0.5s ease;
 }
@@ -217,7 +217,7 @@ body {
     border-radius: 12px;
     text-align: center;
     transition: all 0.4s ease;
-    background: linear-gradient(to top, #074309, #065d0a, #043d14);
+    background: linear-gradient(to top, #bd3246, #740021, #740021);
 }
 
 .sidebar.active .profile #log-out {
@@ -247,7 +247,7 @@ body {
   width: 74%; 
 }
 .boxx2 {
-  background: linear-gradient(to right, #074309, #065d0a, #043d14);
+  background: linear-gradient(to right, #bd3246, #740021, #740021);
   width: 76%; 
   height: 55px;
   padding: 8px 20px; 
@@ -274,7 +274,7 @@ body {
     justify-content: space-between; 
   }
   .boxx1 {
-    background: linear-gradient(to right, #074309, #065d0a, #043d14);
+    background: linear-gradient(to right,#bd3246, #740021, #740021);
     width: 76%; 
     height: 80px;
     padding: 8px 20px; 
@@ -347,7 +347,7 @@ body {
   width: 70px;
   height: 25px;
   padding: 5px 10px;
-  background-color: rgb(3, 61, 3);
+  background-color: #740021;
   color: #fff;
   border: none;
   border-radius: 0 5px 5px 0;
@@ -358,7 +358,7 @@ body {
 }
 
 .main .btn:hover {
-  background: linear-gradient(to right, #074309, #065d0a, #043d14);
+  background: linear-gradient(to right, #bd3246, #740021, #740021);
 }
 /*3 BOXES */
 .sidebar.active + .home-content .box {
